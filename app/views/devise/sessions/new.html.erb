@@ -1,17 +1,37 @@
-<h2>Sign in</h2>
+<section class="page page-signin">
+    <header class="page-header">
+        <h1>Sign in</h1>
+    </header>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+    <div class="row">
+        <div class="col-lg-4">
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { :class => "well" }) do |f| %>
+            <fieldset>
+                <legend>Sign In</legend>
+                <div class="form-group">
+                    <%= f.label :email, :class => "control-label" %>
+                    <%= f.email_field :email, :autofocus => true, :class => "form-control" %>
+                </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+                <div class="form-group">
+                    <%= f.label :password, :class => "control-label" %>
+                    <%= f.password_field :password, :class => "form-control" %>
+                </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+              <% if devise_mapping.rememberable? -%>
+                <div class="form-group">
+                    <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                </div>
+              <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+                <div classs="form-group">
+                    <%= button_tag "Sign In", :class => "btn btn-block btn-primary", :type => "submit" %>
+                    <%= render "devise/shared/links" %>
+                </div>
+            </fieldset>
+        <% end %>
+        </div>
+        <div class="col-lg-8">
+            <h2>Signing in is easy and secure</h2>
+        </div>
+    </div>
