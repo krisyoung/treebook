@@ -1,3 +1,48 @@
 // Place all the styles related to the statuses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.statuses {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.statuses-item {
+    padding-bottom: 9px;
+    border-bottom: solid 1px #eee;
+    margin-bottom: 10px;
+}
+
+.statuses-item.ui-state-hover {
+    background: #fafafa;
+}
+
+.statuses-item-header h4 {
+    margin: 0;
+}
+
+.statuses-item p {
+    margin: 5px 0;
+}
+
+.statuses-item-footer {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.statuses-item-footer .actions a::before {
+    content: " | ";
+}
+
+.statuses-item-footer .actions a:first-child::before {
+    content: "";
+}
+
+.statuses-item .admin {
+    display: none;
+}
+
+.statuses-item.ui-state-hover .admin {
+    display: inline;
+}
